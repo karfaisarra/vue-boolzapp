@@ -42,25 +42,28 @@
                         </div>
                         <div class="search p-2">
                             <button class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                            <input type="text" class="input_style border-0 " value="Cerca o inizia una nuova chat">
+                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <div class="side_bar_contacts">
-                        <div class="contact d-flex p-2 w-100 mb-1 " v-for="(contact, i) in contacts" @click="activeChat(i)">
+                        <div class="contact d-flex p-2 w-100 mb-1 "  v-for="(contact, i) in contacts" @click="activeChat(i)">
                             <div class="logo pe-2">
                                 <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
                             </div>
-                            <div class="info ">
-                                <div class="name">
-                                    {{contact.name}}
+                            <div class="info d-flex justify-content-between w-100">
+                                <div class="details">
+                                    <div class="name">
+                                        <h6>{{contact.name}}</h6>
+                                    </div>
+                                    <div class="description text-black-50">
+                                        Ultimo messaggio inviato
+                                    </div>
                                 </div>
-                                <div class="description">
-                                    Ultimo messaggio inviato
+                                <div class="time text-black-50">
+                                    12:00
                                 </div>
                             </div>
-                            <div class="time d-flex ">
-                                12:00
-                            </div>
+                            
                         </div>
                         <!--<div class="contact d-flex p-2 w-100 mb-1">
                             <div class="logo pe-2">
@@ -198,9 +201,21 @@
                         </div>
                     </div>
                     <div class="message_box_center ">
-                        <div class="my_container d-flex flex-column">
-                            <div class="message ">
-                                <p class="massage_green">Hai portato a spesso il cane?</p>
+                        <div class="my_container ">
+                            <div class="messages">
+                                <!--<div :class="contacts[activeIndex].messages.status ==='sent'? 'my_message' : 'message_received' "></div>-->
+                                <div class="me d-flex justify-content-end">
+                                    <div :class="contacts[activeIndex].messages[0].status ==='sent'? 'my_message' : '' ">
+                                        <p>
+                                            {{contacts[activeIndex].messages[0].message}}
+                                        </p>
+                                        <p class="time d-flex justify-content-end">15:30</p>
+                                    </div>
+                                </div>
+                                <div :class="contacts[activeIndex].messages[2].status ==='received'? 'message_received' : '' ">
+                                    <p>tutto fatto</p>
+                                    <p class="time d-flex justify-content-end">16:15</p>
+                                </div>
                             </div>
                         </div>
                     </div>
