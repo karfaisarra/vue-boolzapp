@@ -46,13 +46,13 @@
                         </div>
                     </div>
                     <div class="side_bar_contacts">
-                        <div class="contact d-flex p-2 w-100 mb-1 mt-1">
+                        <div class="contact d-flex p-2 w-100 mb-1 " v-for="(contact, i) in contacts" @click="activeChat(i)">
                             <div class="logo pe-2">
-                                <img width="50" class="rounded-pill" src="./assets/img/avatar_1.jpg" alt="">
+                                <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
                             </div>
                             <div class="info ">
                                 <div class="name">
-                                    Michele
+                                    {{contact.name}}
                                 </div>
                                 <div class="description">
                                     Ultimo messaggio inviato
@@ -62,7 +62,7 @@
                                 12:00
                             </div>
                         </div>
-                        <div class="contact d-flex p-2 w-100 mb-1">
+                        <!--<div class="contact d-flex p-2 w-100 mb-1">
                             <div class="logo pe-2">
                                 <img width="50" class="rounded-pill" src="./assets/img/avatar_2.jpg" alt="">
                             </div>
@@ -173,18 +173,18 @@
                             <div class="time d-flex ">
                                 12:00
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="message_box w-75">
                     <div class="message_box_top d-flex justify-content-between align-items-center p-3">
                         <div class="active_message d-flex align-items-center">
                             <div class="logo">
-                                <img width="50" class="rounded-pill pe-2" src="./assets/img/avatar_1.jpg" alt="">
+                                <img width="50" class="rounded-pill pe-2" :src="contacts[activeIndex].avatar" alt="">
                             </div>
                             <div class="info">
                                 <div class="name">
-                                    Michele
+                                    {{contacts[activeIndex].name}}
                                 </div>
                                 <div class="data">
                                     Ultimo accesso oggi alle 12:00
@@ -197,17 +197,19 @@
                             <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                         </div>
                     </div>
-                    <div class="message_box_center"></div>
+                    <div class="message_box_center ">
+                        <div class="my_container d-flex flex-column">
+                            <div class="message ">
+                                <p class="massage_green">Hai portato a spesso il cane?</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="message_box_bottom"></div>
                 </div>
             </div>
         </div>
     </div>
     
-    
-
-
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>

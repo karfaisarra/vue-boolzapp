@@ -42,6 +42,7 @@
 }
 .side_bar_search{
     height: 16%;
+    
 }
 .side_bar_search .setting{
     background-color: #8EDAFC;
@@ -58,6 +59,7 @@
 .side_bar_search .search{
     background-color: #FAFAFA;
     width: 100%;
+
 }
 .side_bar_search .search .my_btn{
     width: 20%;
@@ -80,6 +82,10 @@
 }
 .side_bar_contacts .contact{
     background-color: white;
+    cursor: pointer;
+}
+.side_bar_contacts .contact:hover{
+    background-color: rgb(224, 223, 223)
 }
 .side_bar_contacts .contact .info{
     font-size: 14px;
@@ -109,10 +115,25 @@
     color: #B1B1B1;
     padding: 0 0.5rem;
 }
+
 .message_box .message_box_center{
     height: 80%;
     background-image: url(../img/mine.jpg);
+    overflow: auto;
 }
+.message_box_center .my_container{
+    width: 70%;
+    margin: 4rem auto;
+}
+.massage_green{
+    padding: 1rem 3rem 1rem 1rem;
+    width: 300px;
+    background-color: #D5F9BA;
+    border-radius: 10px;
+
+}
+
+
 .message_box .message_box_bottom{
     background-color: green;
     height: 10%;
