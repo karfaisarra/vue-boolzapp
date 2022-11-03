@@ -144,7 +144,7 @@
     padding: 0.5rem;
     border-radius: 10px;
     align-self: flex-end;
-    margin:2rem 4rem 2rem 0;
+    margin:1rem 4rem 1rem 0;
 }
 .message_box .message_box_center .messages .received{
     background-color: white;
@@ -152,7 +152,7 @@
     padding: 0.5rem;
     border-radius: 10px;
     align-self: flex-start;
-    margin:2rem 0rem 2rem 4rem;
+    margin:1rem 0rem 1rem 4rem;
 }
 
 
