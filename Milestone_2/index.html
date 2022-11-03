@@ -90,8 +90,10 @@
                         </div>
                     </div>
                     <div class="message_box_center ">
-                        <div class="messages" v-for="(contact, i) in contacts" :class="contact.messages.status ==='sent'? 'sent' : 'received' " @click="activeChat(i)">
-                            {{contact.messages.message}}
+                        <div class="messages" v-for="(oggetto, j) in (contacts[activeIndex].messages)" @click="activeChat(i)">
+                            <div class="message":class="oggetto[j].status ==='sent'? 'sent' : 'received' ">
+                                {{oggetto[j].message}}
+                            </div>
                         </div>
                     </div>
                     <div class="message_box_bottom">
