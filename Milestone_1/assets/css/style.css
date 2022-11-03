@@ -53,6 +53,12 @@
 }
 .side_bar_search .setting i{
     color: #8EDAFC;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 .side_bar_search .setting .text{
     font-size: 14px;
@@ -79,7 +85,7 @@
     font-size: 12px;
 }
 .side_bar_contacts{
-    overflow: auto;
+    overflow-y:scroll;
     background-color: #FAFAFA;
     height: 74%;
 }
@@ -122,42 +128,46 @@
 .message_box .message_box_center{
     height: 80%;
     background-image: url(../img/mine.jpg);
-    overflow: auto;
+    overflow-y:scroll;
 }
-.message_box_center .my_container{
-    width: 70%;
-    margin: 4rem auto;
+.message_box .message_box_center .messages {
+    display: flex;
+    flex-direction: column;
 }
-.my_message{
-    padding: 1rem ;
-    width: 300px;
+.message_box .message_box_center .messages .sent{
     background-color: #D5F9BA;
+    max-width: 300px;
+    padding: 0.5rem;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 2rem;
+    align-self: flex-end;
+    margin:2rem 4rem 2rem 0;
+}
+.message_box .message_box_center .messages .received{
+    background-color: white;
+    max-width: 300px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    align-self: flex-start;
+    margin:2rem 0rem 2rem 4rem;
+}
 
-}
-.my_message p {
-    margin-bottom: -1rem;
-    padding: 0.2rem;
-}
-.message_received{
-    padding: 1rem ;
-    width: 300px;
-    background-color: #ffffff;
-    border-radius: 10px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 2rem;
-}
-.message_received p {
-    margin-bottom: -1rem;
-    padding: 0.2rem;
-}
+
+
+
+
+
 .message_box .message_box_bottom{
-    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #F3EEEA;
     height: 10%;
+}
+.message_box .message_box_bottom input{
+    flex-grow: 1;
+    border: 0;
+    margin: 0 2rem;
+    height: 80%;
+    border-radius: 5px;
 }

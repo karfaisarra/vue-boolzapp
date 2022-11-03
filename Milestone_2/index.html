@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boolzapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="all_page">
+        <div class="top_page bg-success"></div>
+        <div class="body_page"></div>
+        <div class="box_chat">
+            <div id="app" class="my_container d-flex">
+                <div class="side_bar w-25">
+                    <div class="side_bar_top d-flex justify-content-between align-items-center p-3">
+                        <div class="account d-flex align-items-center">
+                            <div class="logo">
+                                <img width="50" class="rounded-pill" src="./assets/img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="name">Sofia</div>
+                        </div>
+                        <div class="account_icons ">
+                            <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                            <a href="#"><i class="fa-solid fa-message"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </div>
+                    </div>
+                    <div class="side_bar_search">
+                        <div class="setting d-flex pt-2">
+                            <div class="icon p-2 ">
+                                <i class="fa-solid fa-bell-slash bg-white "></i>
+                            </div>
+                            <div class="text d-flex flex-column">
+                                <p>
+                                    Ricevi notifiche di nuovi messaggi <br>
+                                    <a href="#">Attiva notifiche desktop</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="search p-2">
+                            <button class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <div class="side_bar_contacts">
+                        <div class="contact d-flex p-2 w-100 mb-1 "  v-for="(contact, i) in contacts" @click="activeChat(i)">
+                            <div class="logo pe-2">
+                                <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
+                            </div>
+                            <div class="info d-flex justify-content-between w-100">
+                                <div class="details">
+                                    <div class="name">
+                                        <h6>{{contact.name}}</h6>
+                                    </div>
+                                    <div class="description text-black-50">
+                                        Ultimo messaggio inviato
+                                    </div>
+                                </div>
+                                <div class="time text-black-50">
+                                    12:00
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="message_box w-75">
+                    <div class="message_box_top d-flex justify-content-between align-items-center p-3">
+                        <div class="active_message d-flex align-items-center">
+                            <div class="logo">
+                                <img width="50" class="rounded-pill pe-2" :src="contacts[activeIndex].avatar" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="name">
+                                    {{contacts[activeIndex].name}}
+                                </div>
+                                <div class="data">
+                                    Ultimo accesso oggi alle 12:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </div>
+                    </div>
+                    <div class="message_box_center ">
+                        <div class="messages">
+                            <div class="sent">
+                                    Lorem ipsum dolor sit amet.
+                            </div>
+                            <div class="received">
+                                    Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_box_bottom">
+                        <div class="emoji text text-black-50 ">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <div class="icon text-black-50 ">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
