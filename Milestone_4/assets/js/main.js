@@ -168,6 +168,7 @@ createApp({
             ],
             activeIndex:0,
             nuovoMessaggio:'',
+            ricerca:'',
         }
     },
     methods:{
@@ -190,7 +191,11 @@ createApp({
                     status: 'received'
                 }
                 this.contacts[this.activeIndex].messages.push(newObject)
-            }, 1000);
+            }, 1000)
         },
+        searchContacts(){
+            return this.contacts.filter((contact)=>contact.toLowerCase().includes(input.value.toLowerCase()))
+            
+        }
     }
 }).mount('#app')

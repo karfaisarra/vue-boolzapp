@@ -8,11 +8,12 @@
 .top_page{
     width: 100%; 
     height: 20%;
+    background-color: #009688;
 }
 .body_page{
     width: 100%; 
     height: 80%;
-    background-color: #DCDBD3;
+    background-color: #D9DBD4;
 }
 /* box chat */
 
@@ -33,7 +34,7 @@
     background-color: white;
 }
 .side_bar_top{
-    height: 10%;
+    height: 60px;
     background-color: #EAEAEA;
     border-right: 1px solid lightgray;
 }
@@ -46,10 +47,12 @@
     padding: 0 0.5rem;
 }
 .side_bar_search{
-    height: 16%;
+    height: 100px;
 }
 .side_bar_search .setting{
     background-color: #8EDAFC;
+    height: 60%;
+
 }
 .side_bar_search .setting i{
     color: #8EDAFC;
@@ -69,6 +72,7 @@
 .side_bar_search .search{
     background-color: #FAFAFA;
     width: 100%;
+    height: 40%;
     position: sticky;
 }
 .side_bar_search .search .my_btn{
@@ -87,7 +91,7 @@
 .side_bar_contacts{
     overflow-y:scroll;
     background-color: #FAFAFA;
-    height: 74%;
+    height: calc(100% - 160px);
 }
 .side_bar_contacts .contact{
     background-color: white;
@@ -97,7 +101,7 @@
     background-color: #9ca0a0;
 }
 .side_bar_contacts .contact:hover{
-    background-color: rgb(224, 223, 223)
+    background-color: rgb(236, 231, 231)
 }
 
 .side_bar_contacts .contact .info{
@@ -112,7 +116,7 @@
     height: 100%;
 }
 .message_box .message_box_top{
-    height: 10%;
+    height: 60px;
     background-color: #EAEAEA;
 }
 .message_box_top .active_message .info{
@@ -130,7 +134,7 @@
 }
 
 .message_box .message_box_center{
-    height: 80%;
+    height: calc(100% - 120px);
     background-image: url(../img/mine.jpg);
     overflow-y:scroll;
 }
@@ -166,7 +170,7 @@
     align-items: center;
     padding: 0.5rem 2rem;
     background-color: #F3EEEA;
-    height: 10%;
+    height: 60px;
 }
 .message_box .message_box_bottom input{
     flex-grow: 1;
