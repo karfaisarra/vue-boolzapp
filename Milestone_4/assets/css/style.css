@@ -93,16 +93,14 @@
     background-color: #FAFAFA;
     height: calc(100% - 160px);
 }
-.side_bar_contacts .contact{
+.side_bar_contacts .contact:not(.active){
     background-color: white;
     cursor: pointer;
 }
 .active{
-    background-color: #9ca0a0;
+    background-color: #E9EBEB;
 }
-.side_bar_contacts .contact:hover{
-    background-color: rgb(236, 231, 231)
-}
+
 
 .side_bar_contacts .contact .info{
     font-size: 14px;

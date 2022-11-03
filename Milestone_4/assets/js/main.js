@@ -194,7 +194,6 @@ createApp({
             }, 1000)
         },
         searchContacts(){
-            return this.contacts.filter((contact)=>contact.toLowerCase().includes(input.value.toLowerCase()))
             
         }
     }
