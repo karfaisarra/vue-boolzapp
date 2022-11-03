@@ -1,0 +1,177 @@
+/* background */
+
+.all_page{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.top_page{
+    width: 100%; 
+    height: 20%;
+}
+.body_page{
+    width: 100%; 
+    height: 80%;
+    background-color: #DCDBD3;
+}
+/* box chat */
+
+.box_chat{
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    
+}
+.box_chat .my_container{
+    height: 100%;
+}
+/* box chat --> side bar */
+.side_bar{
+    height: 100%;
+    background-color: white;
+}
+.side_bar_top{
+    height: 10%;
+    background-color: #EAEAEA;
+    border-right: 1px solid lightgray;
+}
+.side_bar_top .account .name{
+    font-size: 14px;
+    font-weight: 600;
+}
+.side_bar_top a{
+    color: #B1B1B1;
+    padding: 0 0.5rem;
+}
+.side_bar_search{
+    height: 16%;
+}
+.side_bar_search .setting{
+    background-color: #8EDAFC;
+}
+.side_bar_search .setting i{
+    color: #8EDAFC;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.side_bar_search .setting .text{
+    font-size: 14px;
+}
+.side_bar_search .setting .text a{
+    color: gray;
+}
+.side_bar_search .search{
+    background-color: #FAFAFA;
+    width: 100%;
+    position: sticky;
+}
+.side_bar_search .search .my_btn{
+    width: 20%;
+    height: 30px;
+
+}
+.side_bar_search .search .my_btn a{
+    color: gray;
+}
+.side_bar_search .search .input_style{
+    width: 78%;
+    height: 30px;
+    font-size: 12px;
+}
+.side_bar_contacts{
+    overflow-y:scroll;
+    background-color: #FAFAFA;
+    height: 74%;
+}
+.side_bar_contacts .contact{
+    background-color: white;
+    cursor: pointer;
+}
+.active{
+    background-color: #9ca0a0;
+}
+.side_bar_contacts .contact:hover{
+    background-color: rgb(224, 223, 223)
+}
+
+.side_bar_contacts .contact .info{
+    font-size: 14px;
+}
+
+
+
+
+/* box chat --> message box */
+.message_box{
+    height: 100%;
+}
+.message_box .message_box_top{
+    height: 10%;
+    background-color: #EAEAEA;
+}
+.message_box_top .active_message .info{
+    font-size: 14px;
+}
+.message_box_top .active_message .info .name{
+    font-weight: 600;
+}
+.message_box_top .active_message .info .data{
+    color: gray;
+}
+.message_box_top .icons a{
+    color: #B1B1B1;
+    padding: 0 0.5rem;
+}
+
+.message_box .message_box_center{
+    height: 80%;
+    background-image: url(../img/mine.jpg);
+    overflow-y:scroll;
+}
+.message_box .message_box_center .messages {
+    display: flex;
+    flex-direction: column;
+}
+.message_box .message_box_center .messages .sent{
+    background-color: #D5F9BA;
+    max-width: 300px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin:1rem 4rem 1rem 0;
+}
+.message_box .message_box_center .messages .received{
+    background-color: white;
+    max-width: 300px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    align-self: flex-start;
+    margin:1rem 0rem 1rem 4rem;
+}
+
+
+
+
+
+
+.message_box .message_box_bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #F3EEEA;
+    height: 10%;
+}
+.message_box .message_box_bottom input{
+    flex-grow: 1;
+    border: 0;
+    margin: 0 2rem;
+    height: 80%;
+    border-radius: 5px;
+}
