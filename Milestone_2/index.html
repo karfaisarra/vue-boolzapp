@@ -46,7 +46,8 @@
                         </div>
                     </div>
                     <div class="side_bar_contacts">
-                        <div class="contact d-flex p-2 w-100 mb-1 "  v-for="(contact, i) in contacts" @click="activeChat(i)">
+                        <div class="contact d-flex p-2 w-100 mb-1"   v-for="(contact, i) in contacts" 
+                        :class=" i === activeIndex ? 'active' : '' " @click="activeChat(i)">
                             <div class="logo pe-2">
                                 <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
                             </div>
@@ -89,13 +90,8 @@
                         </div>
                     </div>
                     <div class="message_box_center ">
-                        <div class="messages">
-                            <div class="sent">
-                                    Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="received">
-                                    Lorem ipsum dolor sit amet.
-                            </div>
+                        <div class="messages" v-for="(contact, i) in contacts" :class="contact.messages.status ==='sent'? 'sent' : 'received' " @click="activeChat(i)">
+                            {{contact.messages.message}}
                         </div>
                     </div>
                     <div class="message_box_bottom">

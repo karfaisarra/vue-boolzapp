@@ -69,7 +69,7 @@
 .side_bar_search .search{
     background-color: #FAFAFA;
     width: 100%;
-
+    position: sticky;
 }
 .side_bar_search .search .my_btn{
     width: 20%;
@@ -93,9 +93,13 @@
     background-color: white;
     cursor: pointer;
 }
+.active{
+    background-color: #9ca0a0;
+}
 .side_bar_contacts .contact:hover{
     background-color: rgb(224, 223, 223)
 }
+
 .side_bar_contacts .contact .info{
     font-size: 14px;
 }

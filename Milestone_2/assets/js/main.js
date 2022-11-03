@@ -167,11 +167,13 @@ createApp({
                 }
             ],
             activeIndex:0,
+            activeMessage:0,
         }
     },
     methods:{
-        activeChat(index){
+        activeChat(index, ){
             this.activeIndex = index
+            
         }
     }
 }).mount('#app')
