@@ -143,6 +143,7 @@
 .message_box .message_box_center .messages .sent{
     background-color: #D5F9BA;
     max-width: 300px;
+    width: 250px;
     padding: 0.5rem;
     border-radius: 10px;
     align-self: flex-end;
@@ -151,12 +152,15 @@
 .message_box .message_box_center .messages .received{
     background-color: white;
     max-width: 300px;
+    width: 250px;
     padding: 0.5rem;
     border-radius: 10px;
     align-self: flex-start;
     margin:1rem 0rem 1rem 4rem;
 }
-
+.message_box_center .messages .message p{
+    margin-bottom: -0.25rem;
+}
 
 
 

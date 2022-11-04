@@ -42,7 +42,7 @@
                         </div>
                         <div class="search p-2">
                             <button class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat" v-model="ricerca">
+                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat" v-model="ricerca" @keyup.enter="searchContacts">
                         </div>
                     </div>
                     <div class="side_bar_contacts">
@@ -50,7 +50,7 @@
                         v-for="(contact, i) in contacts" 
                         :class=" i === activeIndex ? 'active' : '' " 
                         v-show="contact.visible"
-                        @click="activeChat(i)">
+                        @click="activeChat(i)" >
                             <div class="logo pe-2">
                                 <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
                             </div>
@@ -94,8 +94,9 @@
                     </div>
                     <div class="message_box_center ">
                         <div class="messages" v-for="(message, j) in contacts[activeIndex].messages">
-                            <div class="message":class="message.status ==='sent'? 'sent' : 'received'" >
+                            <div class="message d-flex flex-column":class="message.status ==='sent'? 'sent' : 'received'" >
                                 {{message.message}}
+                                <p class="align-self-end text-black-50 ">{{message.date.slice(11,16)}}</p>
                             </div>
                         </div>
                     </div>
@@ -113,6 +114,7 @@
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>

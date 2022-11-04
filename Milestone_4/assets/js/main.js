@@ -194,7 +194,13 @@ createApp({
             }, 1000)
         },
         searchContacts(){
-            
+            this.contacts.forEach((contact) => {
+                if (this.ricerca!==contact.name.toLowerCase()) {
+                    contact.visible =false
+                    console.log('sono qui');
+                }
+                contact.visible = true
+            });
         }
     }
 }).mount('#app')
