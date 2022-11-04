@@ -194,13 +194,19 @@ createApp({
             }, 1000)
         },
         searchContacts(){
+            const ricercaArray= this.ricerca.split('');
+            console.log(ricercaArray);
+            let nomeArray
             this.contacts.forEach((contact) => {
-                if (this.ricerca!==contact.name.toLowerCase()) {
-                    contact.visible =false
-                    console.log('sono qui');
+                nomeArray = contact.name.toLowerCase().split('');
+                console.log(nomeArray);
+                if (!nomeArray==(ricercaArray)) {
+                    contact.visible = true
+                }else{
+                    contact.visible = false
                 }
-                contact.visible = true
             });
+            
         }
     }
 }).mount('#app')

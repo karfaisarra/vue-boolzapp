@@ -40,31 +40,34 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="search p-2">
-                            <button class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                        <div class="search p-2" >
+                            <button @click.stop="searchContacts" class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
                             <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat" v-model="ricerca" @keyup.enter="searchContacts">
                         </div>
                     </div>
                     <div class="side_bar_contacts">
-                        <div class="contact d-flex p-2 w-100 mb-1"   
+                        <div 
                         v-for="(contact, i) in contacts" 
-                        :class=" i === activeIndex ? 'active' : '' " 
+                        
                         v-show="contact.visible"
                         @click="activeChat(i)" >
-                            <div class="logo pe-2">
-                                <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
-                            </div>
-                            <div class="info d-flex justify-content-between w-100">
-                                <div class="details">
-                                    <div class="name">
-                                        <h6>{{contact.name}}</h6>
-                                    </div>
-                                    <div class="description text-black-50">
-                                        Ultimo messaggio inviato
-                                    </div>
+
+                            <div class="contact d-flex p-2 w-100 mb-1" :class=" i === activeIndex ? 'active' : '' " >
+                                <div class="logo pe-2">
+                                    <img width="50" class="rounded-pill" :src="contact.avatar" alt="">
                                 </div>
-                                <div class="time text-black-50">
-                                    12:00
+                                <div class="info d-flex justify-content-between w-100">
+                                    <div class="details">
+                                        <div class="name">
+                                            <h6>{{contact.name}}</h6>
+                                        </div>
+                                        <div class="description text-black-50">
+                                            Ultimo messaggio inviato
+                                        </div>
+                                    </div>
+                                    <div class="time text-black-50">
+                                        12:00
+                                    </div>
                                 </div>
                             </div>
                             
@@ -104,7 +107,7 @@
                         <div class="emoji text text-black-50 ">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
-                        <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyup.enter="addMessage">
+                        <input class="form-control" type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyup.enter="addMessage">
                         <div class="icon text-black-50 ">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
