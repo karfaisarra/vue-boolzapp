@@ -195,8 +195,7 @@ createApp({
         },
         searchContacts(){
             this.contacts.forEach((contact) => {
-                 const nomeArray = contact.name.toLowerCase()
-                if (!nomeArray.includes(this.ricerca.toLowerCase())) {
+                if (!contact.name.toLowerCase().includes(this.ricerca.toLowerCase())) {
                     contact.visible = false
                 }else{
                     contact.visible = true
