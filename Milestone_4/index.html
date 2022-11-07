@@ -42,7 +42,7 @@
                         </div>
                         <div class="search p-2" >
                             <button @click.stop="searchContacts" class="my_btn border-0 bg-white me-1"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat" v-model="ricerca" @keyup.enter="searchContacts">
+                            <input type="text" class="input_style border-0 " placeholder="Cerca o inizia una nuova chat" v-model="ricerca" @keyup="searchContacts">
                         </div>
                     </div>
                     <div class="side_bar_contacts">

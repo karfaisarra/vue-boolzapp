@@ -194,13 +194,9 @@ createApp({
             }, 1000)
         },
         searchContacts(){
-            const ricercaArray= this.ricerca.split('');
-            console.log(ricercaArray);
-            let nomeArray
             this.contacts.forEach((contact) => {
-                nomeArray = contact.name.toLowerCase().split('');
-                console.log(nomeArray);
-                if (!nomeArray.includes(ricercaArray)) {
+                 const nomeArray = contact.name.toLowerCase()
+                if (!nomeArray.includes(this.ricerca.toLowerCase())) {
                     contact.visible = false
                 }else{
                     contact.visible = true
