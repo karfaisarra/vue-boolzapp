@@ -1,3 +1,5 @@
+const DateTime = luxon.DateTime;
+
 const { createApp } = Vue
 
 createApp({
@@ -166,18 +168,29 @@ createApp({
                     ],
                 }
             ],
-            activeIndex:0,
-            nuovoMessaggio:'',
-            ricerca:'',
+            activeIndex: 0,
+            nuovoMessaggio: '',
+            ricerca: '',
         }
     },
-    methods:{
-        activeChat(index){
+    methods: {
+        activeChat(index) {
             this.activeIndex = index
         },
-        addMessage(){
+        addMessage() {
+            let now = new Date();
+            let day = now.getDate().toString().padStart(2, '0');
+            let month = (now.getMonth() + 1).toString().padStart(2, '0');
+            let year = now.getFullYear().toString();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            let formatted_date = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+            console.log(formatted_date);
+
             const newObject = {
-                date: '',
+                date: formatted_date,
                 message: this.nuovoMessaggio,
                 status: 'sent'
             }
@@ -186,22 +199,22 @@ createApp({
             this.nuovoMessaggio = ''
             setTimeout(() => {
                 const newObject = {
-                    date: '',
+                    date: formatted_date,
                     message: 'ok!',
                     status: 'received'
                 }
                 this.contacts[this.activeIndex].messages.push(newObject)
             }, 1000)
         },
-        searchContacts(){
+        searchContacts() {
             this.contacts.forEach((contact) => {
                 if (!contact.name.toLowerCase().includes(this.ricerca.toLowerCase())) {
                     contact.visible = false
-                }else{
+                } else {
                     contact.visible = true
                 }
             });
-            
+
         }
     }
 }).mount('#app')
